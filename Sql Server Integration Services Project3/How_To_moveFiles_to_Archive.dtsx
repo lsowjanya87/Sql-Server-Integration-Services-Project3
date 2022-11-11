@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/1/2022 6:08:37 PM"
+  DTS:CreationDate="11/10/2022 11:17:30 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAKSHMI"
   DTS:CreatorName="LAKSHMI\laksh"
-  DTS:DTSID="{37F2EB63-2F9E-4924-BC9D-6912449F45C2}"
+  DTS:DTSID="{83E9525B-0C1A-44E9-AC57-A6BED2977F60}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{1E83201E-D1B6-4F10-9A1C-4FB7FC69EB22}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{F3AA4B28-168C-426B-96B1-DF9C1F0EDBDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{BE151AE9-F421-4035-BF79-DAD0B2485B00}"
+      DTS:DTSID="{0BD8919B-C806-4EC3-B0D3-634F1A984744}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::emp_data]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[User::filepath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -31,7 +31,8 @@
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252">
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\laksh\Downloads\emails_data">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,8 +40,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="Week_end"
-              DTS:DTSID="{8A51C8D3-46C3-427F-B5AF-302C29438730}"
+              DTS:ObjectName="id"
+              DTS:DTSID="{764F5243-68DC-4199-A175-B155EFBA61D4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,8 +49,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="Indicator"
-              DTS:DTSID="{AF9DC238-39CC-4E4F-9BC5-34FE078FE18E}"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{C7324B8F-DAFE-4308-B7AD-82C8AEEB8B54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,8 +58,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="High_industry"
-              DTS:DTSID="{EE5A196E-1179-4783-9AF8-DB0B7B4A8E6E}"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{F8644B9C-F2BB-4A3F-8B26-94D7E9C1FF8C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,8 +67,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="Value"
-              DTS:DTSID="{7B287B10-68BC-41B3-A4EB-7193FDC4D597}"
+              DTS:ObjectName="email"
+              DTS:DTSID="{0CC84ECA-FF75-44E2-B65A-F7CDA40EC7C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{D394BF73-BB7A-4373-8327-3F3895AF7453}"
+              DTS:DTSID="{DB4DB7E8-744E-4B4D-917C-D3A5442B4445}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -85,45 +86,70 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LAKSHMI.testdb]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{70382B3E-8D41-4D60-A7AB-BDC7622BA870}"
+      DTS:DTSID="{41A16131-F6AC-4B7D-8A56-FC0909737828}"
       DTS:ObjectName="LAKSHMI.testdb">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAKSHMI;Initial Catalog=testdb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{70382B3E-8D41-4D60-A7AB-BDC7622BA870}LAKSHMI.testdb;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAKSHMI;Initial Catalog=testdb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{41A16131-F6AC-4B7D-8A56-FC0909737828}LAKSHMI.testdb;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{186DDEEA-78E6-4561-A66B-54E6ECB54264}"
+      DTS:DTSID="{1D516878-1C80-42FD-B312-B849D4EB354A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="emp_data">
+      DTS:ObjectName="Archivefolderpath">
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{98D77D67-CF1D-4CD4-8D70-AB152B02ABF8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="filepath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\laksh\Downloads\emails_data</DTS:VariableValue>
+    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Employees_data_Foreach Loop Container"
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0D487942-C617-4021-9E17-C5B3DF0FC877}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{41A16131-F6AC-4B7D-8A56-FC0909737828}"
+          SQLTask:SqlStatementSource="if Object_Id('dbo.Emails_data','u')is not null&#xA;drop table [dbo].[Emails_data]&#xA;GO&#xA;CREATE TABLE [dbo].[Emails_data](&#xA;&#x9;[id] [varchar](50) NULL,&#xA;&#x9;[first_name] [varchar](50) NULL,&#xA;&#x9;[last_name] [varchar](50) NULL,&#xA;&#x9;[email] [varchar](50) NULL,&#xA;&#x9;[gender] [varchar](50) NULL&#xA;) ON [PRIMARY]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{F22726E7-CCC7-47E5-92E6-C360CCB9613A}"
+      DTS:DTSID="{61EEBF97-A242-4E23-A451-229E171D1BE2}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Employees_data_Foreach Loop Container">
+      DTS:ObjectName="Foreach Loop Container">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{6174A496-65C8-4293-8006-7C5CA05E8CF3}"
-        DTS:ObjectName="{6174A496-65C8-4293-8006-7C5CA05E8CF3}">
+        DTS:DTSID="{1502CA7B-DC9A-4E2D-AE30-C0A556BFB72A}"
+        DTS:ObjectName="{1502CA7B-DC9A-4E2D-AE30-C0A556BFB72A}">
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\laksh\OneDrive\Documents\employee_data_source" />
+              Folder="C:\Users\laksh\Downloads\emails_data" />
             <FEFEProperty
               FileSpec="*.*" />
             <FEFEProperty
@@ -136,13 +162,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data"
+          DTS:refId="Package\Foreach Loop Container\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{8F56FE58-0EE4-48F5-8441-5B7AE6F9CE03}"
+          DTS:DTSID="{C7685259-9B81-48EC-A36B-725A74168FC9}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="DFT_employee_data"
+          DTS:ObjectName="Data Flow Task"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -150,7 +176,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source"
+                  refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Source"
@@ -170,26 +196,26 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Connections[FlatFileConnection]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
                       connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Week_end]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Week_end]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
                           length="50"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Week_end]"
-                          name="Week_end"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                          name="id"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -203,15 +229,15 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Indicator]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Indicator]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
                           length="50"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Indicator]"
-                          name="Indicator"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
+                          name="first_name"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -225,15 +251,15 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[High_industry]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High_industry]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
                           length="50"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[High_industry]"
-                          name="High_industry"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
+                          name="last_name"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -247,15 +273,15 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Value]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
                           length="50"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Value]"
-                          name="Value"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                          name="email"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -269,14 +295,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
                           length="50"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
                           name="gender"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -294,31 +320,31 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Week_end]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="Week_end" />
+                          name="id" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Indicator]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="Indicator" />
+                          name="first_name" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High_industry]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="High_industry" />
+                          name="last_name" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="Value" />
+                          name="email" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
                           codePage="1252"
                           dataType="str"
                           length="50"
@@ -326,27 +352,27 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Error Output]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
                       isErrorOut="true"
                       name="Flat File Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           codePage="1252"
                           dataType="text"
                           description="Flat File Source Error Output Column"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           name="Flat File Source Error Output Column" />
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -355,7 +381,7 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination"
+                  refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -370,7 +396,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[employee_data]</property>
+                      name="OpenRowset">[dbo].[Emails_data]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -412,7 +438,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[LAKSHMI.testdb]"
                       connectionManagerRefId="Package.ConnectionManagers[LAKSHMI.testdb]"
                       description="The OLE DB runtime connection used to access the database."
@@ -420,81 +446,81 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Week_end]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
-                          cachedName="Week_end"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Week_end]"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Week_end]" />
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
                         <inputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
-                          cachedName="Indicator"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Indicator]" />
+                          cachedName="first_name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]" />
                         <inputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[High_industry]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
-                          cachedName="High_industry"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[High_industry]"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[High_industry]" />
+                          cachedName="last_name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]" />
                         <inputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Value]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
-                          cachedName="Value"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[Value]" />
+                          cachedName="email"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]" />
                         <inputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="gender"
-                          externalMetadataColumnId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output].Columns[gender]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gender]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Week_end]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="Week_end" />
+                          name="id" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="Indicator" />
+                          name="first_name" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[High_industry]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="High_industry" />
+                          name="last_name" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="Value" />
+                          name="email" />
                         <externalMetadataColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
                           codePage="1252"
                           dataType="str"
                           length="50"
@@ -504,22 +530,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -530,25 +556,63 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Employees_data_Foreach Loop Container\DFT_employee_data.Paths[Flat File Source Output]"
-                  endId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Flat File Source Output"
-                  startId="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source.Outputs[Flat File Source Output]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Script Task"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{E366C087-80DD-40B8-B3C9-EDA675A684E0}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Script Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_d0fd57abba7443349c8b2b9f689ddca2"
+              VSTAMajorVersion="15"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F0DEC120-F11D-4DC3-95C4-16DB4FF015C8}"
+          DTS:From="Package\Foreach Loop Container\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Script Task" />
+      </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{143A234C-6BBD-4C22-92E4-F43E64B42C3D}"
-          DTS:ObjectName="{143A234C-6BBD-4C22-92E4-F43E64B42C3D}"
+          DTS:DTSID="{02A55DD8-07E6-4531-A2A7-FFAA46D92F60}"
+          DTS:ObjectName="{02A55DD8-07E6-4531-A2A7-FFAA46D92F60}"
           DTS:ValueIndex="0"
-          DTS:VariableName="User::emp_data" />
+          DTS:VariableName="User::filepath" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9EBECA43-3229-4959-9B3E-8610A1AEB0F3}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -560,75 +624,149 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Employees_data_Foreach Loop Container\DFT_employee_data"
-          TopLeft="26.6333259489805,43.9333345662223" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="235.2,140.8"
-          Size="235.2,184"
-          Id="Package\Employees_data_Foreach Loop Container"
-          TopLeft="199.999992052714,33.8000002686183" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Employees_data_Foreach Loop Container\DFT_employee_data">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="234.999990661939,28.6000002272924" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination"
-          TopLeft="305,175" />
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task"
+          TopLeft="15.7333232667716,14.4666679959827" />
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Employees_data_Foreach Loop Container\DFT_employee_data\Flat File Source"
-          TopLeft="210,51" />
+          Size="130.4,41.6"
+          Id="Package\Foreach Loop Container\Script Task"
+          TopLeft="47.3999854962038,78.8666683679157" />
         <EdgeLayout
-          Id="Package\Employees_data_Foreach Loop Container\DFT_employee_data.Paths[Flat File Source Output]"
-          TopLeft="285.6,92.6">
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="90.9333232667716,56.0666679959827">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105,82.4"
+              EndConnector="21.6666622294322,22.800000371933"
               Start="0,0"
-              End="105,74.9">
+              End="21.6666622294322,15.300000371933">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.2" />
+                    End="0,7.40000018596652" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.2"
-                    Point2="0,41.2"
-                    Point3="4,41.2" />
+                    Point1="0,7.40000018596652"
+                    Point2="0,11.4000001859665"
+                    Point3="4,11.4000001859665" />
                   <mssgle:LineSegment
-                    End="101,41.2" />
+                    End="17.6666622294322,11.4000001859665" />
                   <mssgle:CubicBezierSegment
-                    Point1="101,41.2"
-                    Point2="105,41.2"
-                    Point3="105,45.2" />
+                    Point1="17.6666622294322,11.4000001859665"
+                    Point2="21.6666622294322,11.4000001859665"
+                    Point3="21.6666622294322,15.4000001859665" />
                   <mssgle:LineSegment
-                    End="105,74.9" />
+                    End="21.6666622294322,15.300000371933" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="210.4,175.2"
+          Size="210.4,218.4"
+          Id="Package\Foreach Loop Container"
+          TopLeft="317.499987383684,100.533334132301" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="317.399990661939,70.2000002272924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.299996721745,30.3333339050082"
+              Start="0,0"
+              End="105.299996721745,22.8333339050082">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.1666669525041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.1666669525041"
+                    Point2="0,15.1666669525041"
+                    Point3="4,15.1666669525041" />
+                  <mssgle:LineSegment
+                    End="101.299996721745,15.1666669525041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.299996721745,15.1666669525041"
+                    Point2="105.299996721745,15.1666669525041"
+                    Point3="105.299996721745,19.1666669525041" />
+                  <mssgle:LineSegment
+                    End="105.299996721745,22.8333339050082" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
+          TopLeft="161.666660242611,16.466666797532" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="269.999989271164,154.266667892668" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="237.266660242611,58.066666797532">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.333329028554,96.200001095136"
+              Start="0,0"
+              End="118.333329028554,88.700001095136">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.100000547568" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.100000547568"
+                    Point2="0,48.100000547568"
+                    Point3="4,48.100000547568" />
+                  <mssgle:LineSegment
+                    End="114.333329028554,48.100000547568" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.333329028554,48.100000547568"
+                    Point2="118.333329028554,48.100000547568"
+                    Point3="118.333329028554,52.100000547568" />
+                  <mssgle:LineSegment
+                    End="118.333329028554,88.700001095136" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Employees_data_Foreach Loop Container\DFT_employee_data\OLE DB Destination">
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
